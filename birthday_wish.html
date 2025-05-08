@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Surprise for Nuzrath</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #ff66b2;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 40px;
+      animation: blink 1s infinite;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .typewriter {
+      color: #ffffff;
+      font-size: 18px;
+      width: 90%;
+      margin: 30px auto;
+      white-space: pre-wrap;
+      border-right: 2px solid #ff66b2;
+      overflow: hidden;
+      animation: typing 5s steps(60, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 90% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #ff66b2 }
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #ff66b2;
+      border: none;
+      color: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff3399;
+    }
+
+    .message {
+      display: none;
+      font-size: 20px;
+      margin-top: 20px;
+      color: #99ffcc;
+      text-align: center;
+    }
+
+    canvas.confetti {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 Happy 23rd Birthday Soul Sister 🎉</h1>
+  <h2>Happy last single birthday My idiot</h2>
+
+  <div class="typewriter">
+    Hello World();<br>
+    // Today is special<br>
+    if (bestFriend === "Nuzrath") {<br>
+          console.log("You light up my life.");<br>
+          console.log("Thank you for being my constant.");<br>
+    }<br>
+  </div>
+
+  <button onclick="showMessage(); startConfetti();">Run Code 💖</button>
+
+  <div class="message" id="msg">
+    <p>“You're the reason my darkest days felt light.”<br>
+    “You're the code I’ll never debug — because you’re perfect.”</p>
+    <p>Forever yours,<br><b>Shafeeqa 👩‍💻</b></p>
+  </div>
+
+  <canvas class="confetti" id="confetti-canvas"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    function showMessage() {
+      document.getElementById("msg").style.display = "block";
+    }
+
+    function startConfetti() {
+      const duration = 5 * 1000;
+      const end = Date.now() + duration;
+
+      (function frame() {
+        confetti({
+          particleCount: 2,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 },
+        });
+        confetti({
+          particleCount: 2,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 },
+        });
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      })();
+    }
+  </script>
+
+</body>
+</html>
